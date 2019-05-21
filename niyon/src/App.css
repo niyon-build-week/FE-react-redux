@@ -9,4 +9,15 @@
   background: #f2f2f2;
 }
 
+i {
+  color: #3beb95;
+  margin: 5px;
+  padding: 15px;
+
+}
+
+i:hover {
+  color: #4a5472;
+}
+
 

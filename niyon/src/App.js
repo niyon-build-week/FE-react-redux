@@ -11,7 +11,8 @@ function App() {
       <div className="App">
         <div className='container'>
           <div className='nav'>
-            <h1 className='head'>Niyon</h1>
+            <h1 className='head'>niyon</h1>
+            <img src='img/lifeguard.jpg' alt='lifeguard stand at a cloudy lake' />
             <div className='cta'>Our experts say it's OK to ask for help.</div>
           </div>
           <ul>
@@ -30,6 +31,10 @@ function App() {
           <Route path='/signup' component={SignupForm} />
         </div>
         <footer className='foot'>
+          <i className="fab fa-facebook-square fa-3x"></i>
+          <i className="fab fa-linkedin fa-3x"></i>
+          <i className="fab fa-twitter-square fa-3x"></i>
+          <i className="fab fa-instagram fa-3x"></i>
           <p>Lambda 2019&copy;</p>
         </footer>
       </div>
