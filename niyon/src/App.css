@@ -13,7 +13,12 @@
   max-width: 1000px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 15px;
+}
+
+.nav {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 i {
@@ -24,7 +29,7 @@ i {
 }
 
 i:hover {
-  color: #4a5472;
+  color: #f2f2f2;
 }
 
 .head {
@@ -36,7 +41,7 @@ img {
   margin: 20px;
   min-width: 200px;
   max-height: 500px;
-  box-shadow: 10px 8px 8px #262b3a;
+  /* box-shadow: 10px 8px 8px #262b3a; */
 }
 
 .cta {
@@ -45,7 +50,9 @@ img {
 }
 
 .foot {
-  color: #262b3a;
+  padding-bottom: 20px;
+  background: #262b3a;
+  color: #f2f2f2;
   font-size: 1.2rem;
 }
 
