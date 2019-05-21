@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
+import help from './img/lifeguard.jpg';
 import SignupForm from './components/SignupForm';
 import GetLoginForm from './components/GetLoginForm';
 import GiveLoginForm from './components/GiveLoginForm';
@@ -12,8 +13,8 @@ function App() {
         <div className='container'>
           <div className='nav'>
             <h1 className='head'>niyon</h1>
-            <img src='img/lifeguard.jpg' alt='lifeguard stand at a cloudy lake' />
             <div className='cta'>Our experts say it's OK to ask for help.</div>
+            <img src={help} alt='lifeguard stand at a cloudy lake'/>
           </div>
           <ul>
             <li className='link'>
@@ -35,7 +36,7 @@ function App() {
           <i className="fab fa-linkedin fa-3x"></i>
           <i className="fab fa-twitter-square fa-3x"></i>
           <i className="fab fa-instagram fa-3x"></i>
-          <p>Lambda 2019&copy;</p>
+          <p className='copy'>2019&copy; - Lambda Niyon - All Rights Reserved</p>
         </footer>
       </div>
     </Router>
