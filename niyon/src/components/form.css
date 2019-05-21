@@ -2,34 +2,35 @@
       font-size: 1.5rem;
       padding: 40px;
       background: rgb(29, 29, 29);
-      color: white;
+      color: #f2f2f2;
       
 }
 .form a{
-      color: rgb(192, 116, 53);
+      color: #3beb95;
 }
 .form a:hover{
-      color: rgb(118, 118, 118);
+      color: #4a5472;
 }
 
 input {
-      border: 5px solid rgb(118, 118, 118);
+      border: 5px solid #4a5472;
       border-radius: 5%;
       font-size: 1rem;
       padding: 15px;
       margin: 15px;
 }
 button {
-      border: 5px solid rgb(118, 118, 118);
-      background: rgb(192, 116, 53);
+      width: 200px;
+      border: 5px solid #4a5472;
+      background: #3beb95;
       font-size: 1rem;
-      color: white;
+      color: #4a5472;
       padding: 15px;
       margin: 15px;
       border-radius: 5%;
 }
 
 button:hover {
-      color: rgb(118, 118, 118);
-      background: white;
+      
+      background: #f2f2f2;
 }

@@ -9,9 +9,11 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <div className='nav'>
-          <h1>Niyon</h1>
-          <div>somthing clever about the app and what it's doing for THE WORLD</div>
+        <div className='container'>
+          <div className='nav'>
+            <h1 className='head'>Niyon</h1>
+            <div className='cta'>Our experts say it's OK to ask for help.</div>
+          </div>
           <ul>
             <li className='link'>
               <Link to='/login'>Get Advice</Link>

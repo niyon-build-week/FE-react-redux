@@ -28,16 +28,14 @@ class Login extends React.Component {
     this.props
       .login(this.state.credentials)
       .then(() => {
-        //should redirect them back to wherever they were trying to go. doesn't matter in this app, but good practice
-        this.props.location.state.from || '/';
         this.props.history.push("/protected");
       })
   };
 
   render() {
     return (
-      <div className='form'>
-        <form onSubmit={this.login}>
+      <div className='form-wrap'>
+        <form className='form' onSubmit={this.login}>
           <input
             type="text"
             name="username"
@@ -48,7 +46,7 @@ class Login extends React.Component {
           <input
             type="password"
             name="password"
-            placeholder="........"
+            placeholder="password"
             value={this.state.credentials.password}
             onChange={this.handleChange}
           />

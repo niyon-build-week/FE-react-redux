@@ -1,7 +1,10 @@
-import { LOGIN_START, LOGIN_WIN, LOGIN_FAIL  } from '../actions';
+import { LOGIN_START, LOGIN_WIN, LOGIN_FAIL, FETCH_START, FETCH_WIN, FETCH_FAIL } from '../actions';
 
 const initialState = {
-      isLoggedIn: false
+      qFeed: [],
+      isLoggedIn: false,
+      isFetching: false,
+
 };
 
 function loginReducer(state = initialState, action) {
@@ -22,6 +25,25 @@ function loginReducer(state = initialState, action) {
                   return {
                         ...state,
                         isLoggedIn: false,
+                        error: action.payload
+                  }
+            case FETCH_START:
+                  return {
+                        ...state,
+                        isFetching: true,
+                        error: ''
+                  }
+            case FETCH_WIN:
+                  return {
+                        ...state,
+                        qFeed: action.payload,
+                        isFetching:false,
+                        error: ''
+                  }
+            case FETCH_FAIL:
+                  return {
+                        ...state,
+                        isFetching: false,
                         error: action.payload
                   }
             default:

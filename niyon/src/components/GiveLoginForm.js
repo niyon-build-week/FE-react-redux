@@ -27,15 +27,14 @@ class ExpertLogin extends React.Component {
     e.preventDefault();
     this.props.login(this.state.expertCredentials)
       .then(() => {
-        this.props.location.state.from || '/';
-        this.props.history.push("/protected");
-      })
+          this.props.history.push("/protected");
+        })
   };
 
   render() {
     return (
-      <div className='form'>
-        <form onSubmit={this.login}>
+      <div className='form-wrap'>
+        <form className='form' onSubmit={this.login}>
           <input
             type="text"
             name="username"
@@ -46,7 +45,7 @@ class ExpertLogin extends React.Component {
           <input
             type="password"
             name="password"
-            placeholder="........"
+            placeholder="password"
             value={this.state.expertCredentials.password}
             onChange={this.handleChange}
           />
@@ -54,11 +53,11 @@ class ExpertLogin extends React.Component {
             {this.props.isLoggingIn ? (
               <Loader type="ThreeDots" color="#1f2a38" height="12" width="26" />
             ) : (
-              "Log in"
+              "Expert Log in"
             )}
           </button>
           <p>
-            Want to Help? <Link to="/signup">Create an Account</Link>
+            Want to help? <Link to="/signup">Create an Account</Link>
           </p>
         </form>
       </div>
