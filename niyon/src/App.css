@@ -9,6 +9,13 @@
   background: #f2f2f2;
 }
 
+.container {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
 i {
   color: #3beb95;
   margin: 5px;
@@ -35,6 +42,11 @@ img {
 .cta {
   color: #4a5472;
   font-size: 1.5rem;
+}
+
+.foot {
+  color: #262b3a;
+  font-size: 1.2rem;
 }
 
 

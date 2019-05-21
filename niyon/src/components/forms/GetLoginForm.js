@@ -3,12 +3,12 @@ import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 import Loader from "react-loader-spinner";
 
-import { login } from "../store/actions";
+import { login } from "../../store/actions";
 import './form.css';
 
-class ExpertLogin extends React.Component {
+class Login extends React.Component {
   state = {
-    expertCredentials: {
+    credentials: {
       username: "",
       password: ""
     }
@@ -16,8 +16,8 @@ class ExpertLogin extends React.Component {
 
   handleChange = e => {
     this.setState({
-      expertCredentials: {
-        ...this.state.expertCredentials,
+      credentials: {
+        ...this.state.credentials,
         [e.target.name]: e.target.value
       }
     });
@@ -25,10 +25,11 @@ class ExpertLogin extends React.Component {
 
   login = e => {
     e.preventDefault();
-    this.props.login(this.state.expertCredentials)
+    this.props
+      .login(this.state.credentials)
       .then(() => {
-          this.props.history.push("/protected");
-        })
+        this.props.history.push("/protected");
+      })
   };
 
   render() {
@@ -39,25 +40,25 @@ class ExpertLogin extends React.Component {
             type="text"
             name="username"
             placeholder="username"
-            value={this.state.expertCredentials.username}
+            value={this.state.credentials.username}
             onChange={this.handleChange}
           />
           <input
             type="password"
             name="password"
             placeholder="password"
-            value={this.state.expertCredentials.password}
+            value={this.state.credentials.password}
             onChange={this.handleChange}
           />
           <button>
             {this.props.isLoggingIn ? (
               <Loader type="ThreeDots" color="#1f2a38" height="12" width="26" />
             ) : (
-              "Expert Log in"
+              "Log in"
             )}
           </button>
           <p>
-            Want to help? <Link to="/signup">Create an Account</Link>
+            Need help? <Link to="/signup">Create an Account</Link>
           </p>
         </form>
       </div>
@@ -72,4 +73,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { login }
-)(ExpertLogin);
+)(Login);

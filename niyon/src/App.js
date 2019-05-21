@@ -2,9 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
 import help from './img/lifeguard.jpg';
-import SignupForm from './components/SignupForm';
-import GetLoginForm from './components/GetLoginForm';
-import GiveLoginForm from './components/GiveLoginForm';
+import SignupForm from './components/forms/SignupForm';
+import GetLoginForm from './components/forms/GetLoginForm';
+import GiveLoginForm from './components/forms/GiveLoginForm';
 
 function App() {
   return (
@@ -32,10 +32,10 @@ function App() {
           <Route path='/signup' component={SignupForm} />
         </div>
         <footer className='foot'>
-          <i className="fab fa-facebook-square fa-3x"></i>
-          <i className="fab fa-linkedin fa-3x"></i>
-          <i className="fab fa-twitter-square fa-3x"></i>
-          <i className="fab fa-instagram fa-3x"></i>
+          <a href="https://www.facebook.com/"><i className="fab fa-facebook-square fa-2x"></i></a>
+          <a href="http://www.linkedin.com"><i className="fab fa-linkedin fa-2x"></i></a>
+          <a href="http://www.twitter.com"><i className="fab fa-twitter-square fa-2x"></i></a>
+          <a href="http://www.instagram.com"><i className="fab fa-instagram fa-2x"></i></a>
           <p className='copy'>2019&copy; - Lambda Niyon - All Rights Reserved</p>
         </footer>
       </div>

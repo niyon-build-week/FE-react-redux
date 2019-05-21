@@ -5,7 +5,7 @@ import App from './App';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import { createStore, applyMiddleware } from 'redux';
-import { setToken } from './token';
+import { setToken } from './auth/token';
 import { Provider } from 'react-redux';
 import reducer from './store/reducers';
 

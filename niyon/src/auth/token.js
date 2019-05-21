@@ -1,4 +1,4 @@
-import { LOGIN_WIN } from './store/actions/index';
+import { LOGIN_WIN } from '../store/actions';
 
 export const setToken = store => next => action => {
       if (action.type === LOGIN_WIN) {
