@@ -1,0 +1,35 @@
+.form {
+      font-size: 1.5rem;
+      padding: 40px;
+      background: rgb(29, 29, 29);
+      color: white;
+      
+}
+.form a{
+      color: rgb(192, 116, 53);
+}
+.form a:hover{
+      color: rgb(118, 118, 118);
+}
+
+input {
+      border: 5px solid rgb(118, 118, 118);
+      border-radius: 5%;
+      font-size: 1rem;
+      padding: 15px;
+      margin: 15px;
+}
+button {
+      border: 5px solid rgb(118, 118, 118);
+      background: rgb(192, 116, 53);
+      font-size: 1rem;
+      color: white;
+      padding: 15px;
+      margin: 15px;
+      border-radius: 5%;
+}
+
+button:hover {
+      color: rgb(118, 118, 118);
+      background: white;
+}
