@@ -11,7 +11,7 @@ function QNav() {
 
       return (
             <div className='nav-container'>
-                  <h1>niyon</h1>
+                  <h1 className='user-head'>niyon</h1>
                   <nav className='nav'>
                         <NavLink to='/ask/new'>Ask</NavLink>
                         <NavLink to='/ask/history'>History</NavLink>

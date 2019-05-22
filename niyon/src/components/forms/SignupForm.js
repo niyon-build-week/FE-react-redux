@@ -1,5 +1,6 @@
 import React from "react";
-import axios from 'axios';
+import axios from "axios";
+import Start from "./Start";
 import { Link } from "react-router-dom";
 // import { connect } from "react-redux";
 import { addProfile } from "../../store/actions";
@@ -12,9 +13,9 @@ class Signup extends React.Component {
   };
 
   handleChange = event => {
-      const { id, value } = event.target;
-      this.setState({ [id]: value });
-    };
+    const { id, value } = event.target;
+    this.setState({ [id]: value });
+  };
 
   handleSubmit = e => {
     e.preventDefault();
@@ -42,33 +43,32 @@ class Signup extends React.Component {
       });
   };
 
-  
+  //   handleChange = e => {
+  //     this.setState({
+  //       account: {
+  //         ...this.state.account,
+  //         [e.target.name]: e.target.value
+  //       }
+  //     });
+  //   };
 
-//   handleChange = e => {
-//     this.setState({
-//       account: {
-//         ...this.state.account,
-//         [e.target.name]: e.target.value
-//       }
-//     });
-//   };
-
-//   handleSubmit = e => {
-//     e.preventDefault();
-//     this.props.addProfile(this.state.account).then(() => {
-//       this.props.history.push("/protected");
-//     });
-//   };
+  //   handleSubmit = e => {
+  //     e.preventDefault();
+  //     this.props.addProfile(this.state.account).then(() => {
+  //       this.props.history.push("/protected");
+  //     });
+  //   };
 
   render() {
     return (
       <div className="container">
         <div className="nav" />
         <div className="form-wrap">
+          <Start />
           <form className="form" onSubmit={this.handleSubmit}>
             <input
               type="text"
-              id='username'
+              id="username"
               name="username"
               placeholder="username"
               value={this.state.username}
@@ -76,7 +76,7 @@ class Signup extends React.Component {
             />
             <input
               type="password"
-              id='password'
+              id="password"
               name="password"
               placeholder="password"
               value={this.state.password}

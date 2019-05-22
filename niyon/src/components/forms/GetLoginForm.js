@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import Start from './Start';
 // import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 // import Loader from "react-loader-spinner";
@@ -60,6 +61,7 @@ class Login extends React.Component {
   render() {
     return (
       <div className='form-wrap'>
+        <Start />
         <form className='form' onSubmit={this.handleLogin}>
           <input
             type="text"
