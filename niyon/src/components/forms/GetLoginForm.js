@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import Loader from "react-loader-spinner";
 
 import { login } from "../../store/actions";
-import LoginNav from '../marginals/LoginNav';
 import './form.css';
 
 class Login extends React.Component {
@@ -36,7 +35,6 @@ class Login extends React.Component {
   render() {
     return (
       <div className='form-wrap'>
-        <LoginNav />
         <form className='form' onSubmit={this.login}>
           <input
             type="text"

@@ -20,7 +20,7 @@ function App() {
             <div className='cta'>Our experts say it's OK to ask for help.</div>
             <img src={help} alt='lifeguard stand at a cloudy lake'/>
           </div>
-          {/* <ul>
+          <ul>
             <li className='link'>
               <Link to='/'>Get Advice</Link>
             </li>
@@ -30,7 +30,7 @@ function App() {
             <li className='link'>
               <Link to='/signup'>Sign Up</Link>
             </li>
-          </ul> */}
+          </ul>
           <Switch>
           <Route exact path='/' render={props => <GetLoginForm {...props} />} />
           <Route path='/xlogin' render={props => <GiveLoginForm {...props} />} />
