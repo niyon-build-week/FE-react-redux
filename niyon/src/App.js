@@ -1,5 +1,6 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import React, { Component } from 'react';
+import axios from 'axios';
+import { BrowserRouter as Router, Route, Link, Switch, withRouter } from 'react-router-dom';
 import './App.css';
 import help from './img/drowning.jpg';
 import Footer from './components/marginals/Footer';
@@ -8,12 +9,14 @@ import GetLoginForm from './components/forms/GetLoginForm';
 import GiveLoginForm from './components/forms/GiveLoginForm';
 import PrivateRoute from './components/gatedContent/PrivateRoute';
 import QDash from './components/gatedContent/QDashboard';
-import XDash from './components/gatedContent/XDashboard';
+// import XDash from './components/gatedContent/XDashboard';
 
+axios.defaults.baseURL =
+  process.env.API_URL || "https://niyon.herokuapp.com/api/";
 
-function App() {
-  return (
-    <Router>
+class App extends Component {
+  render() {
+    return (
       <div className="App">
         <div className='container'>
           <div className='nav'>
@@ -26,7 +29,7 @@ function App() {
               <Link to='/'>Get Advice</Link>
             </li>
             <li className='link'>
-              <Link to='/xlogin'>Give Advice</Link>
+              <Link to='/x'>Give Advice</Link>
             </li>
             <li className='link'>
               <Link to='/signup'>Sign Up</Link>
@@ -34,10 +37,10 @@ function App() {
           </ul>
           <Switch>
           <Route exact path='/' render={props => <GetLoginForm {...props} />} />
-          <Route path='/xlogin' render={props => <GiveLoginForm {...props} />} />
+          <Route path='/x' render={props => <GiveLoginForm {...props} />} />
           <Route path='/signup' render={props => <SignupForm {...props} />} />
-          <Route path='/ask' component={QDash} /> {/* change to private route */}
-          <Route path='/expert' component={XDash} /> {/* change to private route*/}
+          <PrivateRoute exact path='/protected' component={QDash} /> 
+          {/* <PrivateRoute path='/protected/expert' component={XDash} />  */}
           {/* <PrivateRoute path='' />
           
           <PrivateRoute path='' />
@@ -46,8 +49,8 @@ function App() {
           <Footer />
         </div>
       </div>
-    </Router>
-  );
+    );
+  }
 }
 
-export default App;
+export default withRouter(App);

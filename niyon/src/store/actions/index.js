@@ -7,11 +7,11 @@ export const LOGIN_FAIL = 'LOGIN_FAIL';
 
 export const login = () => dispatch => {
       dispatch({ type: LOGIN_START });
-      axios 
+      return axios 
             .post('https://niyon.herokuapp.com/api/auth/login')
             .then( res => {
                   console.log('log in win!', res)
-                  dispatch({ type: LOGIN_WIN, payload: res.data })
+                  dispatch({ type: LOGIN_WIN, payload: {token: res.data} })
             })
             .catch(err => {
                   console.log('login fail', err)
@@ -25,7 +25,7 @@ export const FETCH_FAIL = 'FETCH_FAIL';
 
 export const fetchProfile = () => dispatch => {
       dispatch({ type: FETCH_START });
-      return axios 
+      axios 
             .get('https://niyon.herokuapp.com/api/profile/:id')
             .then( res => {
                   console.log('fetch win!', res)
@@ -42,10 +42,10 @@ export const REGISTER_START = 'REGISTER_START';
 export const REGISTER_WIN = 'REGISTER_WIN';
 export const REGISTER_FAIL = 'REGISTER_FAIL';
 
-export const addProfile = () => dispatch => {
+export const addProfile = user => dispatch => {
       dispatch({ type: REGISTER_START });
       axios 
-            .put('https://niyon.herokuapp.com/api/auth/register')
+            .put('https://niyon.herokuapp.com/api/auth/register', user)
             .then( res => {
                   console.log('register win!', res)
                   dispatch({ type: REGISTER_WIN, payload: res.data })

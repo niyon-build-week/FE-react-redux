@@ -1,9 +1,11 @@
-import { LOGIN_START, LOGIN_WIN, LOGIN_FAIL, FETCH_START, FETCH_WIN, FETCH_FAIL } from '../actions';
+// import { LOGIN_START, LOGIN_WIN, LOGIN_FAIL, REGISTER_START, REGISTER_WIN, REGISTER_FAIL } from '../actions';
 
 const initialState = {
-      qFeed: [],
       isLoggedIn: false,
       isFetching: false,
+      isRegistering: false,
+      user: {},
+      error: null,
 
 };
 
@@ -12,12 +14,13 @@ function loginReducer(state = initialState, action) {
             case LOGIN_START:
                   return {
                         ...state,
-                        isLoggedIn: false,
+                        isLoggedIn: true,
                         error: ''
                   }
             case LOGIN_WIN:
                   return {
                         ...state,
+                        user: action.payload,
                         isLoggedIn: true,
                         error: ''
                   }
@@ -27,28 +30,47 @@ function loginReducer(state = initialState, action) {
                         isLoggedIn: false,
                         error: action.payload
                   }
-            case FETCH_START:
+            case REGISTER_START:
                   return {
                         ...state,
-                        isFetching: true,
+                        isRegistering: true,
                         error: ''
                   }
-            case FETCH_WIN:
+            case REGISTER_WIN:
                   return {
                         ...state,
-                        qFeed: action.payload,
-                        isFetching:false,
+                        user: action.payload,
+                        isRegistering: true,
                         error: ''
                   }
-            case FETCH_FAIL:
+            case REGISTER_FAIL:
                   return {
                         ...state,
-                        isFetching: false,
+                        isRegistering: false,
                         error: action.payload
                   }
+             
+            // case FETCH_START:
+            //       return {
+            //             ...state,
+            //             isFetching: true,
+            //             error: ''
+            //       }
+            // case FETCH_WIN:
+            //       return {
+            //             ...state,
+            //             isFetching:false,
+            //             error: ''
+            //       }
+            // case FETCH_FAIL:
+            //       return {
+            //             ...state,
+            //             isFetching: false,
+            //             error: action.payload
+            //       }
             default:
                   return state
       }
 }
 
-export default loginReducer;
+// export default loginReducer;
