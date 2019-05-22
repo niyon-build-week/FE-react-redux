@@ -5,11 +5,25 @@
       
 }
 
-.user-head {
+.nav-container .user-head {
       background: #3beb95;
       color: #262b3a;
+      margin-bottom: 0;
 }
 
-.nav {
+.nav-container .nav {
+      font-size: 2rem;
+      display: flex;
+      justify-content: space-around;
+}
 
+.nav-container a {
+      width: 200px;
+      color: #4a5472;
+      padding: 0 15px 15px 15px;
+    
+}
+    
+.nav-container a:hover {
+      color: #3beb95;
 }
