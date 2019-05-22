@@ -4,7 +4,7 @@ import { fetchQ, addQuestion, updateQuestion, removeQuestion } from '../../store
 
 class QFeed extends React.Component {
       state = {
-            questions: []
+            questions: ["fkjdf?", "asjfbajf?", "sdjkkjsdj?", "skdjfhskj?", "jnvmxcjvsd?" ]
       }
 
       componentDidMount() {
@@ -17,7 +17,7 @@ class QFeed extends React.Component {
                   <div className='question-wrap'>
                         <h2>Inquiries</h2>
                         <div className='q-feed'>
-                              {this.props.questions.map(question => (
+                              {this.state.questions.map(question => (
                                     <div className='q-card' key={question.id}>
                                           <p>{question.value}</p>
                                     </div>

@@ -19,33 +19,33 @@ export const login = () => dispatch => {
             })
 }
 
-//expert user login
-export const XLOGIN_START = 'XLOGIN_START';
-export const XLOGIN_WIN = 'XLOGIN_WIN';
-export const XLOGIN_FAIL = 'XLOGIN_FAIL';
+// //expert user login
+// export const XLOGIN_START = 'XLOGIN_START';
+// export const XLOGIN_WIN = 'XLOGIN_WIN';
+// export const XLOGIN_FAIL = 'XLOGIN_FAIL';
 
-export const expertLogin = () => dispatch => {
-      dispatch({ type: XLOGIN_START });
-      axios 
-            .get('url for user')
-            .then( res => {
-                  console.log('log in win!', res)
-                  dispatch({ type: XLOGIN_WIN, payload: res.data })
-            })
-            .catch(err => {
-                  console.log('login fail', err)
-                  dispatch({ type: XLOGIN_FAIL, payload: err })
-            })
-}
+// export const expertLogin = () => dispatch => {
+//       dispatch({ type: XLOGIN_START });
+//       axios 
+//             .get('url for user')
+//             .then( res => {
+//                   console.log('log in win!', res)
+//                   dispatch({ type: XLOGIN_WIN, payload: res.data })
+//             })
+//             .catch(err => {
+//                   console.log('login fail', err)
+//                   dispatch({ type: XLOGIN_FAIL, payload: err })
+//             })
+// }
 
 //fetch question feed
 export const FETCH_START = 'FETCH_START';
 export const FETCH_WIN = 'FETCH_WIN';
 export const FETCH_FAIL = 'FETCH_FAIL';
 
-export const fetch = () => dispatch => {
+export const fetchQ = () => dispatch => {
       dispatch({ type: FETCH_START });
-      axios 
+      return axios 
             .get('url for feed data')
             .then( res => {
                   console.log('fetch win!', res)
