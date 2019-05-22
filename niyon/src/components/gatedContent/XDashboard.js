@@ -1,14 +1,14 @@
 import React from 'react';
-import QNav from './QNav';
+import XNav from './XNav';
 
 
-function QDash() {
+function XDash() {
       return (
             <div className='user-container'>
-                  <QNav />
+                  <XNav />
                  
             </div>
       );
 }
 
-export default QDash;
+export default XDash;

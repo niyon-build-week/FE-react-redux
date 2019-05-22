@@ -8,7 +8,8 @@ import GetLoginForm from './components/forms/GetLoginForm';
 import GiveLoginForm from './components/forms/GiveLoginForm';
 import PrivateRoute from './components/gatedContent/PrivateRoute';
 import QDash from './components/gatedContent/QDashboard';
-import AskQ from './components/gatedContent/AskQ';
+import XDash from './components/gatedContent/XDashboard';
+
 
 function App() {
   return (
@@ -36,7 +37,7 @@ function App() {
           <Route path='/xlogin' render={props => <GiveLoginForm {...props} />} />
           <Route path='/signup' render={props => <SignupForm {...props} />} />
           <Route path='/ask' component={QDash} /> {/* change to private route */}
-          <Route path='/ask/new' component={AskQ} /> {/* change to private route*/}
+          <Route path='/expert' component={XDash} /> {/* change to private route*/}
           {/* <PrivateRoute path='' />
           
           <PrivateRoute path='' />

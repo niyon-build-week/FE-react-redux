@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-function ANav() {
+function XNav() {
       const logout = e => {
             e.preventDefault();
             localStorage.removeItem('token');
@@ -15,11 +15,11 @@ function ANav() {
                   <nav className='nav'>
                         <NavLink to='/expert profile id'>Profile</NavLink>
                         <NavLink to='/a history'>History</NavLink>
-                        <Navlink exact to='/' onClick={logout}>Logout</Navlink>
+                        <NavLink exact to='/' onClick={logout}>Logout</NavLink>
                   </nav>
 
             </div>
       )
 }
 
-export default ANav;
+export default XNav;
