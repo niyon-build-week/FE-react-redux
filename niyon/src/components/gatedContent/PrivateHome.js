@@ -1,8 +1,8 @@
 import React from "react";
 import axios from "axios";
 import "./gatedContent.css";
-
 import { NavLink } from "react-router-dom";
+// import profile from '../../img/undraw_step_to_the_sun_nxqq.png'
 
 class PrivateHome extends React.Component {
   constructor(props) {
@@ -22,22 +22,18 @@ class PrivateHome extends React.Component {
     };
     axios
       .get(
-        `https://niyon.herokuapp.com/api/profile/`,
+        `https://niyon.herokuapp.com/api/profile`,
         headers
       )
       .then(res => {
         console.log("mount win", res.data);
+        console.log(this.state)
         this.setState({
           user: res.data.find(
             user => `${user.user_id}` === localStorage.getItem("user_id")
           )
         });
-        axios.get(`https://niyon.herokuapp.com/api/profile/${this.state.user.user_id}`)
-            .then(res => {
-                  this.setState({
-                        user: res.data
-                  })
-            })
+        
       })
       .catch(error => {
         console.log("mount fail", error);
@@ -47,6 +43,23 @@ class PrivateHome extends React.Component {
     // });
   }
 
+
+  //delete profile
+//   deleteUser = id => {
+//       axios
+//         .delete(`https://niyon.herokuapp.com/api/profile/${id}`)
+//         .then(result => {
+//           console.log("delete user", result.data);
+//           this.setState({ user: result.data });
+//         })
+//         .catch(err => console.log(err));
+//     };
+//     deleteProfile = e => {
+//       e.preventDefault();
+//       console.log("delete this", this.state.user.id);
+//       this.deleteUser(this.state.user.user_id);
+//     };
+
   render() {
     const logout = e => {
       e.preventDefault();
@@ -54,14 +67,14 @@ class PrivateHome extends React.Component {
       localStorage.removeItem("id");
       window.location = "/";
     };
-
+    console.log('state', this.state)
     return (
       <div className="private nav-container">
         <div>
           <h1 className="user-head">Niyon</h1>
           <div className="cta">Our experts say it's OK to ask for help.</div>
           <hr />
-          {/* <img src={help} alt='lifeguard stand at a cloudy lake'/> */}
+          
 
           <ul className="nav">
             <li className="link">
@@ -71,11 +84,21 @@ class PrivateHome extends React.Component {
               <NavLink to="/history/:id">History</NavLink>
             </li>
             <li className="link">
+              <NavLink exact to="/profile/:id">
+                Profile
+              </NavLink>
+            </li>
+            <li className="link">
               <NavLink exact to="/" onClick={logout}>
                 Logout
               </NavLink>
             </li>
+            
+            
+            
           </ul>
+          {/* <img src={profile} alt='lifeguard stand at a cloudy lake'/> */}
+          
         </div>
       </div>
     );

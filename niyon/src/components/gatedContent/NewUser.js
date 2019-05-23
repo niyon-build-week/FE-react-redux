@@ -1,5 +1,5 @@
 import React from 'react';
-import { addProfile, addXProfile } from '../../store/actions';
+
 
 
 class NewUser extends React.Component {

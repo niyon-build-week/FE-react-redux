@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import './gatedContent.css';
 import PrivateHome from './PrivateHome';
 
 class QForm extends React.Component {
@@ -46,9 +47,9 @@ class QForm extends React.Component {
 
       render() {
             return (
-                  <div className='q-form'>
+                  <div className='q-form-wrap'>
                         <PrivateHome />
-                        <form onSubmit={this.addQuestion}>
+                        <form className='q-form' onSubmit={this.addQuestion}>
                               <input 
                                     type='text'
                                     name='question'
