@@ -12,13 +12,18 @@ class QHistory extends React.Component {
       };
 
       componentDidMount() {
+            const headers = { 
+                  headers: {
+                        authorization: localStorage.getItem("token")
+                  }
+            }
             axios
-                  .get(`https://niyon.herokuapp.com/api/questions/`)
+                  .get(`https://niyon.herokuapp.com/api/questions/`, headers)
                   .then(res => {
                         this.setState({ allQuestions: res.data })
-                        console.log('mounting all Qs', this.state)
+                        console.log('mounted q array', this.state)
                   })
-                  .catch(err => console.log(err));
+                  .catch(err => console.log('mount q array fail', err));
       };
 
       render() {

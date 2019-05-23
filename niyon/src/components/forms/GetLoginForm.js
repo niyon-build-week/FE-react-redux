@@ -33,7 +33,7 @@ class Login extends React.Component {
         console.log("LOGIN WIN", res);
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("user_id", res.data.id);
-        this.props.history.push(`/protected/${res.data.id}`);
+        this.props.history.push(`/${res.data.id}`);
       })
       .catch(err => {
         console.log("LOGIN ERR", err);

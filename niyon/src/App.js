@@ -30,9 +30,9 @@ class App extends React.Component {
           <Route path='/l' render={props => <GetLoginForm {...props} />} />
           <Route path='/xl' render={props => <GiveLoginForm {...props} />} />
           <Route path='/signup' render={props => <SignupForm {...props} />} />
-          <PrivateRoute exact path='/protected/:id' component={PrivateHome} /> 
-          <PrivateRoute path='/protected/ask' render={props => <QForm {...props}/>} component={QForm} />
-          <PrivateRoute path='/protected/history' render={props => <Questions {...props} />} />
+          <PrivateRoute exact path='/:id' component={PrivateHome} /> 
+          <PrivateRoute path='/ask/:id' render={props => <QForm {...props}/>} component={QForm} />
+          <PrivateRoute path='/history/:id' render={props => <Questions {...props} />} />
           </Switch>
           <Footer />
         </div>
