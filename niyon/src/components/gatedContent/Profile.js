@@ -50,7 +50,7 @@ class Profile extends React.Component {
             console.log('profile?', this.state)
             return(
             
-                  <div className='profile-container'>
+                  <div className='profile-wrap'>
                         <PrivateHome />
                         <div className='profile-card'>
                               <p>I'm {this.state.user.first_name} {this.state.user.last_name}</p>
@@ -58,7 +58,9 @@ class Profile extends React.Component {
                               <p>Gender: {this.state.user.gender}</p>
                               <p>Location: {this.state.user.location}</p>
                               <p>Language: {this.state.user.language}</p>
-                              <button>Edit Profile</button>
+                              <p>Favorite Ice Cream Flavor: strawberry</p>
+                              <button>Update Profile</button>
+                              
                         </div>
 
                   </div>

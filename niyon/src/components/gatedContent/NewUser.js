@@ -1,104 +1,105 @@
-import React from 'react';
-
-
+import React from "react";
+import axios from 'axios';
 
 class NewUser extends React.Component {
-      constructor(props) {
-            super(props);
-            this.state = {
-                  user: {
-                        id: '',
-                        firstName: '',
-                        lastName: '',
-                        email: '',
-                        age: '',
-                        primaryLanguage: '',
-                        secondaryLanguage: '',
-                        areaOfExpertise: '',
-                        certs: ''
-                  }
+  constructor() {
+    super();
+    this.state = {
+      user: {}
+    };
+  }
+
+  componentDidMount() {
+      const headers = {
+            headers: {
+                  authorization: localStorage.getItem("token")
             }
       }
+    axios
+      .get(`https://niyon.herokuapp.com/api/profile`, headers)
+      .then(res => {
+        console.log('profile update', res.data);
+        console.log(this.state);
+        this.setState({
+          user: res.data.find(
+            user => `${user.user_id}` === localStorage.getItem("user_id")
+          )
+        });
+      })
+      .catch(error => {
+        console.log("profile fail", error);
+      });
+  }
 
-      handleChange = e => {
-            this.setState({
-                  user: {
-                    ...this.state.user,
-                    [e.target.name]: e.target.value
-                  }
-                });
-
+  handleChange = e => {
+    this.setState({
+      user: {
+        ...this.state.user,
+        [e.target.name]: e.target.value
       }
+    });
+  };
 
-
-      render() {
-            return (
-                  <div className='form-wrap'>
-                        <h2>Create Your Profile</h2>
-                        <form className='form'>
-                              <input
-                                    type="text"
-                                    name="firstName"
-                                    placeholder="First Name"
-                                    value={this.state.firstName}
-                                    onChange={this.handleChange}
-                              />
-                              <input
-                                    type="text"
-                                    name="lastName"
-                                    placeholder="Last Name"
-                                    value={this.state.lastName}
-                                    onChange={this.handleChange}
-                              />
-                              <input
-                                    type="text"
-                                    name="email"
-                                    placeholder="Email"
-                                    value={this.state.email}
-                                    onChange={this.handleChange}
-                              />
-                              <input
-                                    type="text"
-                                    name="age"
-                                    placeholder="Age"
-                                    value={this.state.age}
-                                    onChange={this.handleChange}
-                              />
-                              <input
-                                    type="text"
-                                    name="primaryLang"
-                                    placeholder="Primary Language"
-                                    value={this.state.primaryLanguage}
-                                    onChange={this.handleChange}
-                              />
-                              <input
-                                    type="text"
-                                    name="sescondaryLang"
-                                    placeholder="Secondary Language"
-                                    value={this.state.secondaryLanguage}
-                                    onChange={this.handleChange}
-                              />
-                              <input
-                                    type="text"
-                                    name="areaOfExpertise"
-                                    placeholder="Area Of Expertise"
-                                    value={this.state.areaOfExpertise}
-                                    onChange={this.handleChange}
-                              />
-                              <input
-                                    type="text"
-                                    name="certs"
-                                    placeholder="Certifications"
-                                    value={this.state.certs}
-                                    onChange={this.handleChange}
-                              />
-                              <button onClick={id => this.addProfile(id)}>Get Advice</button>
-                              <button onClick={id => this.addXProfile(id)}>Give Advice</button>
-                        </form>
-
-                  </div>
-            )
-      }
+  render() {
+    return (
+      <div className="form-wrap">
+        <h2>Be yourself.</h2>
+        <form className="form">
+          <input
+            type="text"
+            name="firstName"
+            placeholder="first name"
+            value={this.state.first_name}
+            onChange={this.handleChange}
+          />
+          <input
+            type="text"
+            name="lastName"
+            placeholder="last name"
+            value={this.state.last_name}
+            onChange={this.handleChange}
+          />
+          <input
+            type="text"
+            name="age"
+            placeholder="age"
+            value={this.state.age}
+            onChange={this.handleChange}
+          />
+          <input
+            type="text"
+            name="location"
+            placeholder="location"
+            value={this.state.location}
+            onChange={this.handleChange}
+          />
+          <input
+            type="text"
+            name="language"
+            placeholder="primary language"
+            value={this.state.language}
+            onChange={this.handleChange}
+          />
+          <input
+            type="text"
+            name="skills"
+            placeholder="areas of expertise"
+            value={this.state.skills}
+            onChange={this.handleChange}
+          />
+          <input
+            type="text"
+            name="certs"
+            placeholder="certifications"
+            value={this.state.certs}
+            onChange={this.handleChange}
+          />
+          <button>Update Profile</button>
+          <button>Delete Profile</button>
+        </form>
+      </div>
+    );
+  }
 }
 
 export default NewUser;
