@@ -52,8 +52,8 @@ class App extends React.Component {
           <PrivateRoute path='' />
           <PrivateRoute path='' /> */}
           </Switch>
-          <Footer />
         </div>
+        <Footer />
       </div>
     );
   }
