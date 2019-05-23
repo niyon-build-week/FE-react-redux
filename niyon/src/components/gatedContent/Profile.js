@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import PrivateHome from "./PrivateHome";
+import PrivateNav from "./PrivateNav";
 import { NavLink } from "react-router-dom";
 import UpdateUser from "./UpdateUserForm";
 
@@ -38,7 +38,7 @@ class Profile extends React.Component {
     console.log("profile?", this.state);
     return (
       <div className="profile-wrap">
-        <PrivateHome />
+        <PrivateNav />
         <div className="profile-card">
           <p>
             I'm {this.state.user.first_name} {this.state.user.last_name}

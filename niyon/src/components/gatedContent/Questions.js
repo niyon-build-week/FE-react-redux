@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import PrivateHome from './PrivateHome';
+import PrivateNav from './PrivateNav';
 
 
 class Questions extends React.Component {
@@ -35,7 +35,7 @@ class Questions extends React.Component {
   render() {
     return (
       <div className='my-qs'>
-        <PrivateHome />
+        <PrivateNav />
         <h1>MY QUESTION THREAD</h1>
         <p>.map list of my questions</p>
       </div>

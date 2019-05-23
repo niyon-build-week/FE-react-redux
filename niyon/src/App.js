@@ -11,7 +11,7 @@ import Profile from './components/gatedContent/Profile';
 import GetLoginForm from './components/forms/GetLoginForm';
 import Questions from './components/gatedContent/Questions';
 import GiveLoginForm from './components/forms/GiveLoginForm';
-import PrivateHome from './components/gatedContent/PrivateHome';
+import PrivateNav from './components/gatedContent/PrivateNav';
 import UpdateUser from './components/gatedContent/UpdateUserForm';
 import PrivateRoute from './components/gatedContent/PrivateRoute';
 
@@ -32,7 +32,7 @@ class App extends React.Component {
           <Route path='/l' render={props => <GetLoginForm {...props} />} />
           <Route path='/xl' render={props => <GiveLoginForm {...props} />} />
           <Route path='/signup' render={props => <SignupForm {...props} />} />
-          <PrivateRoute exact path='/:id' component={PrivateHome} /> 
+          <PrivateRoute exact path='/:id' component={PrivateNav} /> 
           <PrivateRoute path='/ask/:id' render={props => <QForm {...props}/>} component={QForm} />
           <PrivateRoute path='/history/:id' render={props => <Questions {...props} />} component={Questions} />
           <PrivateRoute path='/profile/:id' render={props => <Profile {...props} />} component={Profile} />
