@@ -20,10 +20,14 @@
 .nav-container a {
       width: 200px;
       color: #4a5472;
-      padding: 0 15px 15px 15px;
+      padding: 15px;
     
 }
     
 .nav-container a:hover {
       color: #3beb95;
+}
+
+.q-form {
+      padding: 40px 0;
 }

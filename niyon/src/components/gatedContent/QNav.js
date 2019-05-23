@@ -14,8 +14,8 @@ function QNav() {
             <div className='nav-container'>
                   <h1 className='user-head'>niyon</h1>
                   <nav className='nav'>
-                        <NavLink to='/ask/new'>Ask</NavLink>
-                        <NavLink to='/ask/history'>History</NavLink>
+                        <NavLink to='/protected/ask'>Ask</NavLink>
+                        <NavLink to='/protected/history'>History</NavLink>
                         <NavLink exact to='/' onClick={logout}>Logout</NavLink>
                   </nav>
 

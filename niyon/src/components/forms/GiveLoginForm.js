@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import Start from './Start';
+import PublicHome from './PublicHome';
 // import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 // import Loader from "react-loader-spinner";
@@ -61,7 +61,7 @@ class XLogin extends React.Component {
   render() {
     return (
       <div className='form-wrap'>
-        <Start />
+        <PublicHome />
         <form className='form' onSubmit={this.handleLogin}>
           <input
             type="text"

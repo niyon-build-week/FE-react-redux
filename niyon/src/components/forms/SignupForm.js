@@ -1,9 +1,9 @@
 import React from "react";
 import axios from "axios";
-import Start from "./Start";
+import PublicHome from "./PublicHome";
 import { Link } from "react-router-dom";
 // import { connect } from "react-redux";
-import { addProfile } from "../../store/actions";
+// import { addProfile } from "../../store/actions";
 import "./form.css";
 
 class Signup extends React.Component {
@@ -64,7 +64,7 @@ class Signup extends React.Component {
       <div className="container">
         <div className="nav" />
         <div className="form-wrap">
-          <Start />
+          <PublicHome />
           <form className="form" onSubmit={this.handleSubmit}>
             <input
               type="text"

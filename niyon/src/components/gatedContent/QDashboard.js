@@ -1,14 +1,18 @@
 import React from "react";
 import QNav from "./QNav";
+import QHistory from './QHistory';
+import QForm from './QForm';
+// import Questions from "./Questions"
 import axios from 'axios';
 import './gatedContent.css';
 
 export default class UserDash extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
+      questions: [],    
       user: {},
-      loading: true
+      // loading: true
     };
   }
 
@@ -26,15 +30,21 @@ export default class UserDash extends React.Component {
       .catch(error => {
         console.log("mount fail", error);
       })
-      .finally(() => {
-        this.setState({ loading: false });
-      });
+      // .finally(() => {
+      //   this.setState({ loading: false });
+      // });
   }
 
   render(){
         return(
             <div className='user-dashboard'>
                   <QNav />
+                  <QForm />
+                  {/* <QHistory /> */}
+                  {/* <Questions 
+                        {...props}
+                        questions={this.state.questions}
+                  /> */}
 
             </div>
         )

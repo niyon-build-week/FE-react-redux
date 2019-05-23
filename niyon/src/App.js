@@ -1,21 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import axios from 'axios';
-import { BrowserRouter as Router, Route, Link, Switch, withRouter } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import './App.css';
 
 import Footer from './components/marginals/Footer';
-import Start from './components/forms/Start';
+import PublicHome from './components/forms/PublicHome';
 import SignupForm from './components/forms/SignupForm';
 import GetLoginForm from './components/forms/GetLoginForm';
 import GiveLoginForm from './components/forms/GiveLoginForm';
 import PrivateRoute from './components/gatedContent/PrivateRoute';
 import QDash from './components/gatedContent/QDashboard';
-// import XDash from './components/gatedContent/XDashboard';
+import QForm from './components/gatedContent/QForm';
+import QHistory from './components/gatedContent/QHistory';
+
 
 axios.defaults.baseURL =
   process.env.API_URL || "https://niyon.herokuapp.com/api/";
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <div className="App">
@@ -37,11 +39,13 @@ class App extends Component {
             </li>
           </ul> */}
           <Switch>
-          <Route exact path='/' component={Start} />
+          <Route exact path='/' component={PublicHome} />
           <Route path='/l' render={props => <GetLoginForm {...props} />} />
           <Route path='/xl' render={props => <GiveLoginForm {...props} />} />
           <Route path='/signup' render={props => <SignupForm {...props} />} />
           <PrivateRoute exact path='/protected/:id' component={QDash} /> 
+          <PrivateRoute path='/protected/ask' render={props => <QForm {...props} />} />
+          <PrivateRoute path='/protected/:id/history' render={props => <QHistory {...props}/>} />
           {/* <PrivateRoute path='/protected/expert' component={XDash} />  */}
           {/* <PrivateRoute path='' />
           

@@ -13,8 +13,8 @@ function XNav() {
             <div className='nav-container'>
                   <h1>niyon</h1>
                   <nav className='nav'>
-                        <NavLink to='/expert profile id'>Profile</NavLink>
-                        <NavLink to='/a history'>History</NavLink>
+                        <NavLink to='/expert:id'>Profile</NavLink>
+                        <NavLink to='/xhistory'>History</NavLink>
                         <NavLink exact to='/' onClick={logout}>Logout</NavLink>
                   </nav>
 

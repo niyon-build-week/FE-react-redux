@@ -1,8 +1,8 @@
-import React from 'react';
+ import React from 'react';
 import help from '../../img/drowning.jpg';
 import { NavLink } from 'react-router-dom';
 
-class Start extends React.Component {
+class PublicHome extends React.Component {
       render() {
       return (
             <div className='start'>
@@ -27,4 +27,4 @@ class Start extends React.Component {
       }
 }
 
-export default Start;
+export default PublicHome;
