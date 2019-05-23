@@ -45,15 +45,15 @@ class App extends React.Component {
           <Route path='/signup' render={props => <SignupForm {...props} />} />
           <PrivateRoute exact path='/protected/:id' component={QDash} /> 
           <PrivateRoute path='/protected/ask' render={props => <QForm {...props} />} />
-          <PrivateRoute path='/protected/:id/history' render={props => <QHistory {...props}/>} />
-          {/* <PrivateRoute path='/protected/expert' component={XDash} />  */}
+          <PrivateRoute path='/protected/history' render={props => <QHistory {...props} />} />
+          {/* <PrivateRoute path='/protected/profile' render={props => <Profile {...props} />} />  */}
           {/* <PrivateRoute path='' />
           
           <PrivateRoute path='' />
           <PrivateRoute path='' /> */}
           </Switch>
+          <Footer />
         </div>
-        <Footer />
       </div>
     );
   }

@@ -11,6 +11,12 @@
       margin-bottom: 0;
 }
 
+.nav-container .cta {
+      margin: 40px 0;
+      font-size: 1.2rem;
+      color: #4a5472;
+}
+
 .nav-container .nav {
       font-size: 2rem;
       display: flex;

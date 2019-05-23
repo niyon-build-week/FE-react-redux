@@ -30,13 +30,13 @@ class Login extends React.Component {
     axios
       .post(endpoint, this.state)
       .then(res => {
-        // console.log("LOGIN RESPONSE", res);
+        console.log("LOGIN WIN", res);
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("user_id", res.data.id);
         this.props.history.push(`/protected/${res.data.id}`);
       })
-      .catch(error => {
-        console.log("LOGIN ERROR", error);
+      .catch(err => {
+        console.log("LOGIN ERR", err);
       });
   };
 

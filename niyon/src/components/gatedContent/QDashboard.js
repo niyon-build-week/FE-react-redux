@@ -1,24 +1,24 @@
 import React from "react";
-import QNav from "./QNav";
-import QHistory from './QHistory';
-import QForm from './QForm';
+import QForm from "./QForm";
+// import QHistory from "./QHistory";
 // import Questions from "./Questions"
-import axios from 'axios';
-import './gatedContent.css';
+import axios from "axios";
+import "./gatedContent.css";
+import PrivateHome from "./PrivateHome";
 
 export default class UserDash extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      questions: [],    
       user: {},
       // loading: true
     };
   }
 
+  //mount profile
   componentDidMount() {
     return axios
-      .get("https://niyon.herokuapp.com/api/profile/:id")
+      .get(`https://niyon.herokuapp.com/api/profile/`)
       .then(res => {
         console.log("mount win", res.data);
         return this.setState({
@@ -35,18 +35,35 @@ export default class UserDash extends React.Component {
       // });
   }
 
-  render(){
-        return(
-            <div className='user-dashboard'>
-                  <QNav />
-                  <QForm />
-                  {/* <QHistory /> */}
-                  {/* <Questions 
-                        {...props}
-                        questions={this.state.questions}
-                  /> */}
+  // //delete profile
+  // deleteUser = id => {
+  //   axios
+  //     .delete(`https://niyon.herokuapp.com/api/profile/${id}`)
+  //     .then(res => {
+  //       console.log("DELETE USER", res.data);
+  //       this.setState({ user: res.data });
+  //     })
+  //     .catch(err => console.log(err));
+  // };
 
-            </div>
-        )
+  // deleteProfile = event => {
+  //   event.preventDefault();
+  //   console.log("DELETE", this.state.user.id);
+  //   this.deleteUser(this.state.user.user_id);
+  // };
+
+
+  render() {
+    return (
+      <div className="user-dashboard">
+        <PrivateHome />
+        <QForm />
+        {/* <QHistory /> */}
+        {/* <Questions 
+          {...props}
+          questions={this.state.questions}
+        /> */}
+      </div>
+    );
   }
 }

@@ -12,7 +12,7 @@ class QHistory extends React.Component {
 
       componentDidMount() {
             axios
-                  .get('https://niyon.herokuapp.com/api/questions/:id')
+                  .get(`https://niyon.herokuapp.com/api/questions/`)
                   .then(res => {
                         this.setState({ allQuestions: res.data })
                         console.log('mounting all Qs', this.state)

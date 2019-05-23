@@ -32,7 +32,7 @@ class Signup extends React.Component {
         axios
           .post("https://niyon.herokuapp.com/api/auth/login", this.state)
           .then(res => {
-            console.log("LOGIN WIN", res);
+            console.log("REGISTER WIN", res);
             localStorage.setItem("token", res.data.token);
             localStorage.setItem("user_id", res.data.id);
             this.props.history.push(`/protected/${res.data.id}`);
