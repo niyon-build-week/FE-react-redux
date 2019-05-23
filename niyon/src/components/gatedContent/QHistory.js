@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import Questions from './Questions';
+import PrivateHome from './PrivateHome';
+// import Questions from './Questions';
 
 class QHistory extends React.Component {
       constructor() {
@@ -23,8 +24,9 @@ class QHistory extends React.Component {
       render() {
             return (
                   <div className='q-history'>
+                        <PrivateHome />
                         <h1>testing</h1>
-                        <Questions />
+                        {/* <Questions /> */}
                   </div>
 
             )

@@ -1,7 +1,7 @@
 import React from "react";
 import QForm from "./QForm";
 // import QHistory from "./QHistory";
-// import Questions from "./Questions"
+import Questions from "./Questions"
 import axios from "axios";
 import "./gatedContent.css";
 import PrivateHome from "./PrivateHome";
@@ -24,6 +24,7 @@ export default class UserDash extends React.Component {
         return this.setState({
           user: res.data.find(
             user => `${user.user_id}` === localStorage.getItem("user_id")
+          
           )
         });
       })
@@ -57,7 +58,6 @@ export default class UserDash extends React.Component {
     return (
       <div className="user-dashboard">
         <PrivateHome />
-        <QForm />
         {/* <QHistory /> */}
         {/* <Questions 
           {...props}

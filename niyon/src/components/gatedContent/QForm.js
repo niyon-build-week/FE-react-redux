@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import PrivateHome from './PrivateHome';
 
 class QForm extends React.Component {
       constructor(props) {
@@ -46,6 +47,7 @@ class QForm extends React.Component {
       render() {
             return (
                   <div className='q-form'>
+                        <PrivateHome />
                         <form onSubmit={this.addQuestion}>
                               <input 
                                     type='text'
