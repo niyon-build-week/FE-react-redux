@@ -23,6 +23,7 @@ class QHistory extends React.Component {
       render() {
             return (
                   <div className='q-history'>
+                        <h1>testing</h1>
                         <Questions />
                   </div>
 
