@@ -1,4 +1,4 @@
- import React from 'react';
+import React from 'react';
 import help from '../../img/drowning.jpg';
 import { NavLink } from 'react-router-dom';
 

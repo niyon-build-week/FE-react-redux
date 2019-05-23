@@ -36,7 +36,7 @@ class XLogin extends React.Component {
         this.props.history.push(`/protected/${res.data.id}`);
       })
       .catch(error => {
-        console.error("LOGIN ERROR", error);
+        console.log("LOGIN ERROR", error);
       });
   };
 

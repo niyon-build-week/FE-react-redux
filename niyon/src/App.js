@@ -4,13 +4,13 @@ import { Route, Switch, withRouter } from 'react-router-dom';
 import './App.css';
 
 import Footer from './components/marginals/Footer';
+import QForm from './components/gatedContent/QForm';
 import PublicHome from './components/forms/PublicHome';
 import SignupForm from './components/forms/SignupForm';
+import QDash from './components/gatedContent/QDashboard';
 import GetLoginForm from './components/forms/GetLoginForm';
 import GiveLoginForm from './components/forms/GiveLoginForm';
 import PrivateRoute from './components/gatedContent/PrivateRoute';
-import QDash from './components/gatedContent/QDashboard';
-import QForm from './components/gatedContent/QForm';
 import QHistory from './components/gatedContent/QHistory';
 
 
