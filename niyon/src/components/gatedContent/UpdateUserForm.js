@@ -1,7 +1,7 @@
 import React from "react";
 import axios from 'axios';
 
-class NewUser extends React.Component {
+class UpdateUser extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -26,8 +26,8 @@ class NewUser extends React.Component {
           )
         });
       })
-      .catch(error => {
-        console.log("profile fail", error);
+      .catch(err => {
+        console.log("profile fail", err);
       });
   }
 
@@ -102,4 +102,4 @@ class NewUser extends React.Component {
   }
 }
 
-export default NewUser;
+export default UpdateUser;

@@ -5,13 +5,14 @@ import './App.css';
 
 import Footer from './components/marginals/Footer';
 import QForm from './components/gatedContent/QForm';
-import Profile from './components/gatedContent/Profile';
 import PublicHome from './components/forms/PublicHome';
 import SignupForm from './components/forms/SignupForm';
-import Questions from './components/gatedContent/Questions';
-import PrivateHome from './components/gatedContent/PrivateHome';
+import Profile from './components/gatedContent/Profile';
 import GetLoginForm from './components/forms/GetLoginForm';
+import Questions from './components/gatedContent/Questions';
 import GiveLoginForm from './components/forms/GiveLoginForm';
+import PrivateHome from './components/gatedContent/PrivateHome';
+import UpdateUser from './components/gatedContent/UpdateUserForm';
 import PrivateRoute from './components/gatedContent/PrivateRoute';
 
 
@@ -35,6 +36,7 @@ class App extends React.Component {
           <PrivateRoute path='/ask/:id' render={props => <QForm {...props}/>} component={QForm} />
           <PrivateRoute path='/history/:id' render={props => <Questions {...props} />} component={Questions} />
           <PrivateRoute path='/profile/:id' render={props => <Profile {...props} />} component={Profile} />
+          <PrivateRoute path='/update_profile/:id' render={props => <UpdateUser {...props} />} component={UpdateUser} />
           </Switch>
           <Footer />
         </div>

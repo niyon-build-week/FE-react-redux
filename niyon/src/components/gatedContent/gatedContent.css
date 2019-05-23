@@ -53,6 +53,12 @@
       width: 500px;
 }
 
+.q-form-card {
+      padding: 30px;
+      margin: 30px 0;
+      box-shadow: 2px 2px 6px #262b3a;
+}
+
 .profile-wrap {
       max-width: 1000px;
       width: 100%;
@@ -62,6 +68,6 @@
 
 .profile-card {
       padding: 30px;
-      margin-top: 30px;
+      margin: 30px 0;
       box-shadow: 2px 2px 6px #262b3a;
 }

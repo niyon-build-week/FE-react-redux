@@ -49,49 +49,51 @@ class QForm extends React.Component {
             return (
                   <div className='q-form-wrap'>
                         <PrivateHome />
-                        <form className='q-form' onSubmit={this.addQuestion}>
-                              <input 
-                                    type='text'
-                                    name='question'
-                                    placeholder='ask me anything'
-                                    vaue={this.state.question}
-                                    onChange={this.handleChange}
-                              />
-                              <div className='baseline' />
-                              <input 
-                                    type='text'
-                                    name='question-type'
-                                    placeholder='category'
-                                    vaue={this.state.question_type}
-                                    onChange={this.handleChange}
-                              />
-                              <div className='baseline' />
-                              <input 
-                                    type='text'
-                                    name='title'
-                                    placeholder='title'
-                                    vaue={this.state.title}
-                                    onChange={this.handleChange}
-                              />
-                              <div className='baseline' />
-                              <input 
-                                    type='text'
-                                    name='location'
-                                    placeholder='whereabouts'
-                                    vaue={this.state.location}
-                                    onChange={this.handleChange}
-                              />
-                              <div className='baseline' />
-                              <input 
-                                    type='text'
-                                    name='date'
-                                    placeholder='date'
-                                    vaue={this.state.date}
-                                    onChange={this.handleChange}
-                              />
-                              <div className='baseline' />
-                              <button className='butt' type='submit'>You're not alone.</button>
-                        </form>
+                        <div className='q-form-card'>
+                              <form className='q-form' onSubmit={this.addQuestion}>
+                                    <input 
+                                          type='text'
+                                          name='question'
+                                          placeholder='ask me anything'
+                                          vaue={this.state.question}
+                                          onChange={this.handleChange}
+                                    />
+                                    <div className='baseline' />
+                                    <input 
+                                          type='text'
+                                          name='question-type'
+                                          placeholder='category'
+                                          vaue={this.state.question_type}
+                                          onChange={this.handleChange}
+                                    />
+                                    <div className='baseline' />
+                                    <input 
+                                          type='text'
+                                          name='title'
+                                          placeholder='title'
+                                          vaue={this.state.title}
+                                          onChange={this.handleChange}
+                                    />
+                                    <div className='baseline' />
+                                    <input 
+                                          type='text'
+                                          name='location'
+                                          placeholder='whereabouts'
+                                          vaue={this.state.location}
+                                          onChange={this.handleChange}
+                                    />
+                                    <div className='baseline' />
+                                    <input 
+                                          type='text'
+                                          name='date'
+                                          placeholder='date'
+                                          vaue={this.state.date}
+                                          onChange={this.handleChange}
+                                    />
+                                    <div className='baseline' />
+                                    <button type='submit'>You're not alone.</button>
+                              </form>
+                        </div>
                   </div>
             )
       }
