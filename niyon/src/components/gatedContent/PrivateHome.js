@@ -65,7 +65,7 @@ class PrivateHome extends React.Component {
 
           <ul className="nav">
             <li className="link">
-              <NavLink to="/ask">Ask</NavLink>
+              <NavLink to="/ask/:id">Ask</NavLink>
             </li>
             <li className="link">
               <NavLink to="/history/:id">History</NavLink>
