@@ -13,13 +13,12 @@ body {
 }
 
 a {
-	color: #3beb95;
+  color: #4a5472;
   text-decoration: none;
-  font-family: 'Righteous';
 }
 
 a:hover {
-  color: #4a5472;
+  color: #3beb95;
 }
 
 h1 {
