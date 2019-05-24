@@ -1,15 +1,12 @@
 import React from "react";
-import axios from "axios";
 import "./gatedContent.css";
 import { NavLink } from "react-router-dom";
-// import profile from '../../img/undraw_step_to_the_sun_nxqq.png'
 
 class PrivateNav extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       user: {}
-      // loading: true
     };
   }
 

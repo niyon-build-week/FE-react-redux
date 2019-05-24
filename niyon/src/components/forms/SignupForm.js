@@ -43,22 +43,6 @@ class Signup extends React.Component {
       })
   };
 
-  //   handleChange = e => {
-  //     this.setState({
-  //       account: {
-  //         ...this.state.account,
-  //         [e.target.name]: e.target.value
-  //       }
-  //     });
-  //   };
-
-  //   handleSubmit = e => {
-  //     e.preventDefault();
-  //     this.props.addProfile(this.state.account).then(() => {
-  //       this.props.history.push("/protected");
-  //     });
-  //   };
-
   render() {
     return (
       <div className="container">
@@ -92,14 +76,5 @@ class Signup extends React.Component {
     );
   }
 }
-
-// const mapStateToProps = state => ({
-//   isRegistering: state.isRegistering
-// });
-
-// export default connect(
-//   mapStateToProps,
-//   { addProfile }
-// )(Signup);
 
 export default Signup;

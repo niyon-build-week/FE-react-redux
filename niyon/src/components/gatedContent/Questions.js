@@ -37,8 +37,8 @@ class Questions extends React.Component {
         <div className='my-qs'>
           <PrivateNav />
           <h1> My Advice </h1>
-          <p></p>
-          <p>.map list of my questions</p>
+          <hr />
+          <p>list of my questions</p>
         </div>
     )
   }

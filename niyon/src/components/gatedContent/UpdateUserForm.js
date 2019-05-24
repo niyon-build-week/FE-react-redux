@@ -41,6 +41,8 @@ class UpdateUser extends React.Component {
     });
   };
 
+  ////////// update user profile
+
   updateUser = user => {
     return axios
       .put(`https://niyon.herokuapp.com/api/profile/${user.id}`, user )
@@ -69,7 +71,25 @@ class UpdateUser extends React.Component {
     })
   };
 
-  
+  ////////// remove user profile 
+  deleteUser = id => {
+    axios
+      .delete(`https://niyon.herokuapp.com/api/profile/${id}`)
+      .then(res => {
+        console.log("delete", res.data);
+        this.setState({ user: res.data });
+      })
+      .catch(error => console.log(error));
+  };
+
+  deleteIt = e => {
+    e.preventDefault();
+    console.log("delete", this.state.user.id);
+    this.deleteUser(this.state.user.user_id);
+  };
+
+
+
 
   render() {
     return (
