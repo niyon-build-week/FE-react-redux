@@ -14,34 +14,34 @@ class PrivateNav extends React.Component {
   }
 
   //mount profile
-  componentDidMount() {
-    const headers = {
-      headers: {
-        authorization: localStorage.getItem("token")
-      }
-    };
-    axios
-      .get(
-        `https://niyon.herokuapp.com/api/profile`,
-        headers
-      )
-      .then(res => {
-        console.log("mount win", res.data);
-        console.log(this.state)
-        this.setState({
-          user: res.data.find(
-            user => `${user.user_id}` === localStorage.getItem("user_id")
-          )
-        });
+  // componentDidMount() {
+  //   const headers = {
+  //     headers: {
+  //       authorization: localStorage.getItem("token")
+  //     }
+  //   };
+  //   axios
+  //     .get(
+  //       `https://niyon.herokuapp.com/api/profile`,
+  //       headers
+  //     )
+  //     .then(res => {
+  //       console.log("mount win", res.data);
+  //       console.log(this.state)
+  //       this.setState({
+  //         user: res.data.find(
+  //           user => `${user.user_id}` === localStorage.getItem("user_id")
+  //         )
+  //       });
         
-      })
-      .catch(error => {
-        console.log("mount fail", error);
-      });
+  //     })
+  //     .catch(error => {
+  //       console.log("mount fail", error);
+  //     });
     // .finally(() => {
     //   this.setState({ loading: false });
     // });
-  }
+  // }
 
   render() {
     const logout = e => {
@@ -50,11 +50,11 @@ class PrivateNav extends React.Component {
       localStorage.removeItem("id");
       window.location = "/";
     };
-    console.log('state', this.state)
+    // console.log('state', this.state)
     return (
       <div className="private nav-container">
         <div>
-          <h1 className="user-head">Niyon</h1>
+          <h1 className="user-head"><NavLink className='main-link' to='/:id'>Niyon</NavLink></h1>
           <div className="cta">Our experts say it's OK to ask for help.</div>
           <hr />
           

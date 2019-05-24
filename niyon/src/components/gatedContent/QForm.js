@@ -19,8 +19,7 @@ class QForm extends React.Component {
             this.setState({ [e.target.name]: e.target.value })
       };
 
-      addQuestion = e => {
-            e.preventDefault();
+      addQuestion = question => {
             axios
                   .post('https://niyon.herokuapp.com/api/questions/', {
                         question_type: this.state.question_type,
@@ -31,7 +30,7 @@ class QForm extends React.Component {
                   })
                   .then(res => {
                         this.setState({ questions: res.data });
-                        this.props.history.push('/protected/:id')
+                        this.props.history.push('/history/:id')
                         console.log('add question', res)
                   })
                   .catch(err => console.log('add Q err', err));
@@ -44,6 +43,8 @@ class QForm extends React.Component {
                   date: ''
             })
       };
+
+      addQuestion
 
       render() {
             return (

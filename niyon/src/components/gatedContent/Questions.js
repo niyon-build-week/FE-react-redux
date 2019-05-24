@@ -4,42 +4,40 @@ import PrivateNav from './PrivateNav';
 
 
 class Questions extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
-      allQuestions: [],
-      questions: [],
-      filter: {}
+      questions: []
     };
-    // console.log(this)
+    console.log(this)
   }
 
   componentDidMount() {
-    const headers = {
-          headers: {
-                authorization: localStorage.getItem("token")
-          }
-    }
+    // const headers = {
+    //       headers: {
+    //             authorization: localStorage.getItem("token")
+    //       }
+    // }
     axios
-      .get(`https://niyon.herokuapp.com/api/questions/`, headers)
+      .get(`https://niyon.herokuapp.com/api/questions/:id`)
       .then(res => {
-        console.log('profile update', res.data);
-        console.log(this.state);
+        console.log('mounting q list', res.data);
         this.setState({
-          user: res.data.find(
-            user => `${user.user_id}` === localStorage.getItem("user_id")
-          )
+          questions: res.data
+          
         });
+        console.log('q list state', this.state);
       })
       .catch(err => {
-        console.log("profile fail", err);
+        console.log("q list mount fail", err);
       });
   }  
     render() {
       return (
         <div className='my-qs'>
           <PrivateNav />
-          <h1>MY QUESTION THREAD</h1>
+          <h1> My Advice </h1>
+          <p></p>
           <p>.map list of my questions</p>
         </div>
     )

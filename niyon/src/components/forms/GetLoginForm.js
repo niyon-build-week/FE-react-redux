@@ -26,9 +26,8 @@ class Login extends React.Component {
   handleLogin = event => {
     event.preventDefault();
 
-    const endpoint = "https://niyon.herokuapp.com/api/auth/login";
     axios
-      .post(endpoint, this.state)
+      .post("https://niyon.herokuapp.com/api/auth/login", this.state)
       .then(res => {
         console.log("LOGIN WIN", res);
         localStorage.setItem("token", res.data.token);

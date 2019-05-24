@@ -25,9 +25,8 @@ class Signup extends React.Component {
       password: this.state.password
     };
 
-    const endpoint = "https://niyon.herokuapp.com/api/auth/register";
     axios
-      .post(endpoint, register)
+      .post('https://niyon.herokuapp.com/api/auth/register', register)
       .then(res => {
         axios
           .post("https://niyon.herokuapp.com/api/auth/login", this.state)
@@ -35,12 +34,13 @@ class Signup extends React.Component {
             console.log("REGISTER WIN", res);
             localStorage.setItem("token", res.data.token);
             localStorage.setItem("user_id", res.data.id);
-            this.props.history.push(`/protected/${res.data.id}`);
+            //redirect to new user
+            this.props.history.push(`/new_user/:id`);
           });
       })
       .catch(err => {
         console.error("REGISTER FAIL", err);
-      });
+      })
   };
 
   //   handleChange = e => {
