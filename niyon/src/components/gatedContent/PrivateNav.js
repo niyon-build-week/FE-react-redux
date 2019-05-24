@@ -13,6 +13,48 @@ class PrivateNav extends React.Component {
     };
   }
 
+  render() {
+    const logout = e => {
+      e.preventDefault();
+      localStorage.removeItem("token");
+      localStorage.removeItem("id");
+      window.location = "/";
+    };
+    // console.log('state', this.state)
+    return (
+      <div className="private nav-container">
+        <div>
+          <h1 className="user-head"><NavLink className='main-link' to='/:id'>Niyon</NavLink></h1>
+          <div className="cta">Our experts say it's OK to ask for help.</div>
+          <hr />
+          <ul className="nav">
+            <li className="link">
+              <NavLink to="/ask/:id">Ask</NavLink>
+            </li>
+            <li className="link">
+              <NavLink to="/history/:id">History</NavLink>
+            </li>
+            <li className="link">
+              <NavLink exact to="/profile/:id">
+                Profile
+              </NavLink>
+            </li>
+            <li className="link">
+              <NavLink exact to="/" onClick={logout}>
+                Logout
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default PrivateNav;
+
+
+
   //mount profile
   // componentDidMount() {
   //   const headers = {
@@ -42,66 +84,3 @@ class PrivateNav extends React.Component {
     //   this.setState({ loading: false });
     // });
   // }
-
-  render() {
-    const logout = e => {
-      e.preventDefault();
-      localStorage.removeItem("token");
-      localStorage.removeItem("id");
-      window.location = "/";
-    };
-    // console.log('state', this.state)
-    return (
-      <div className="private nav-container">
-        <div>
-          <h1 className="user-head"><NavLink className='main-link' to='/:id'>Niyon</NavLink></h1>
-          <div className="cta">Our experts say it's OK to ask for help.</div>
-          <hr />
-          
-
-          <ul className="nav">
-            <li className="link">
-              <NavLink to="/ask/:id">Ask</NavLink>
-            </li>
-            <li className="link">
-              <NavLink to="/history/:id">History</NavLink>
-            </li>
-            <li className="link">
-              <NavLink exact to="/profile/:id">
-                Profile
-              </NavLink>
-            </li>
-            <li className="link">
-              <NavLink exact to="/" onClick={logout}>
-                Logout
-              </NavLink>
-            </li>
-            
-            
-            
-          </ul>
-          {/* <img src={profile} alt='lifeguard stand at a cloudy lake'/> */}
-          
-        </div>
-      </div>
-    );
-
-    // return (
-    //       <div className='private nav-container'>
-
-    //                   <h1 className='user-head'>niyon</h1>
-    //                   <div className='cta'>Our experts say it's OK to ask for help.</div>
-    //                   <hr />
-    //                   <nav className='nav'>
-    //                         <NavLink to='/protected/ask'>Ask</NavLink>
-    //                         <NavLink to='/protected/history'>History</NavLink>
-    //                         {/* <NavLink to='/protected/profile'>Profile</NavLink> */}
-    //                         <NavLink exact to='/' onClick={logout}>Logout</NavLink>
-    //                   </nav>
-
-    //       </div>
-    // )
-  }
-}
-
-export default PrivateNav;

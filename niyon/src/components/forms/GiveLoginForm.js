@@ -56,13 +56,7 @@ class XLogin extends React.Component {
             value={this.state.password}
             onChange={this.handleChange}
           />
-          <button> Expert Log in
-            {/* {this.props.isLoggingIn ? (
-              <Loader type="ThreeDots" color="#1f2a38" height="12" width="26" />
-            ) : (
-              "Log in"
-            )} */}
-          </button>
+          <button> Expert Log in</button>
           <p>
             Want to help? <Link to="/signup">Create an Account</Link>
           </p>

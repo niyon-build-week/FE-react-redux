@@ -1,10 +1,7 @@
 import React from "react";
 import axios from "axios";
 import PublicHome from './PublicHome';
-// import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
-// import Loader from "react-loader-spinner";
-// import { login } from "../../store/actions";
 import './form.css';
 
 class Login extends React.Component {
@@ -39,24 +36,6 @@ class Login extends React.Component {
       });
   };
 
-  
-
-  // login = e => {
-  //   e.preventDefault();
-  //   export const setToken = store => next => action => {
-  //     if (action.type === LOGIN_WIN) {
-  //           console.log(action);
-  //           localStorage.setItem('userToken', action.payload.token);
-  //     }
-  //     next(action);
-  //   };
-  //   this.props.login(this.state.user).then(() => {
-  //       this.props.history.push("/protected");
-  //     })
-  // };
-
-  
-
   render() {
     return (
       <div className='form-wrap'>
@@ -77,11 +56,7 @@ class Login extends React.Component {
             onChange={this.handleChange}
           />
           <button> Log in
-            {/* {this.props.isLoggingIn ? (
-              <Loader type="ThreeDots" color="#1f2a38" height="12" width="26" />
-            ) : (
-              "Log in"
-            )} */}
+       
           </button>
           <p>
             Need help? <Link to="/signup">Create an Account</Link>
@@ -92,13 +67,24 @@ class Login extends React.Component {
   }
 }
 
-// const mapStateToProps = state => ({
-//   isLoggingIn: state.isLoggingIn
-// });
-
-// export default connect(
-//   mapStateToProps,
-//   { login, setToken }
-// )(Login);
-
 export default Login;
+
+
+
+  
+
+  // login = e => {
+  //   e.preventDefault();
+  //   export const setToken = store => next => action => {
+  //     if (action.type === LOGIN_WIN) {
+  //           console.log(action);
+  //           localStorage.setItem('userToken', action.payload.token);
+  //     }
+  //     next(action);
+  //   };
+  //   this.props.login(this.state.user).then(() => {
+  //       this.props.history.push("/protected");
+  //     })
+  // };
+
+  
