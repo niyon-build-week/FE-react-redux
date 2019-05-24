@@ -15,30 +15,33 @@ class Questions extends React.Component {
   }
 
   componentDidMount() {
-    const headers = { 
-      headers: {
-            authorization: localStorage.getItem("token")
-      }
+    const headers = {
+          headers: {
+                authorization: localStorage.getItem("token")
+          }
     }
     axios
       .get(`https://niyon.herokuapp.com/api/questions/`, headers)
       .then(res => {
-        console.log('q mount', res.data);
+        console.log('profile update', res.data);
+        console.log(this.state);
         this.setState({
-          allQuestions: res.data
-        })
-      .catch(err => console.log('q mount error', err))
+          user: res.data.find(
+            user => `${user.user_id}` === localStorage.getItem("user_id")
+          )
+        });
       })
-  };
-  
-
-  render() {
-    return (
-      <div className='my-qs'>
-        <PrivateNav />
-        <h1>MY QUESTION THREAD</h1>
-        <p>.map list of my questions</p>
-      </div>
+      .catch(err => {
+        console.log("profile fail", err);
+      });
+  }  
+    render() {
+      return (
+        <div className='my-qs'>
+          <PrivateNav />
+          <h1>MY QUESTION THREAD</h1>
+          <p>.map list of my questions</p>
+        </div>
     )
   }
 

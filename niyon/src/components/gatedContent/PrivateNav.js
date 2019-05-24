@@ -43,23 +43,6 @@ class PrivateNav extends React.Component {
     // });
   }
 
-
-  //delete profile
-//   deleteUser = id => {
-//       axios
-//         .delete(`https://niyon.herokuapp.com/api/profile/${id}`)
-//         .then(result => {
-//           console.log("delete user", result.data);
-//           this.setState({ user: result.data });
-//         })
-//         .catch(err => console.log(err));
-//     };
-//     deleteProfile = e => {
-//       e.preventDefault();
-//       console.log("delete this", this.state.user.id);
-//       this.deleteUser(this.state.user.user_id);
-//     };
-
   render() {
     const logout = e => {
       e.preventDefault();

@@ -1,5 +1,6 @@
 import React from "react";
 import axios from 'axios';
+import PrivateNav from './PrivateNav';
 
 class UpdateUser extends React.Component {
   constructor() {
@@ -40,9 +41,38 @@ class UpdateUser extends React.Component {
     });
   };
 
+  updateUser = updatedUser => {
+    return axios
+      .put(`https://niyon.herokuapp.com/api/profile${updatedUser.id}`, updatedUser )
+      .then(res => {
+        console.log('updating', res);
+        this.setState({
+          user: res.data.find(
+            user => `${user.user_id}` === localStorage.getItem('user_id')
+          )
+        })
+        console.log('its working!');
+        this.props.history.push('/profile/:id');
+      })
+      .catch(err => {
+        console.log('rats', err)
+      })
+  };
+
+  updateIt = e => {
+    e.preventDefault();
+    this.updateUser(this.state.user).then(state => {
+      this.setState({
+        state: ''
+      });
+      this.props.history.push('/profile/:id')
+    })
+  };
+
   render() {
     return (
       <div className="form-wrap">
+        <PrivateNav />
         <h2>Be yourself.</h2>
         <form className="form">
           <input
@@ -94,7 +124,7 @@ class UpdateUser extends React.Component {
             value={this.state.certs}
             onChange={this.handleChange}
           />
-          <button>Update Profile</button>
+          <button onClick={this.updateIt}>Update Profile</button>
           <button>Delete Profile</button>
         </form>
       </div>

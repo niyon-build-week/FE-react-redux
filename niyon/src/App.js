@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import './App.css';
 
@@ -17,8 +17,8 @@ import PrivateRoute from './components/gatedContent/PrivateRoute';
 
 
 
-axios.defaults.baseURL =
-  process.env.API_URL || "https://niyon.herokuapp.com/api/";
+// axios.defaults.baseURL =
+//   process.env.API_URL || "https://niyon.herokuapp.com/api/";
 
 class App extends React.Component {
   

@@ -2,7 +2,6 @@ import React from "react";
 import axios from "axios";
 import PrivateNav from "./PrivateNav";
 import { NavLink } from "react-router-dom";
-import UpdateUser from "./UpdateUserForm";
 
 class Profile extends React.Component {
   constructor(props) {
