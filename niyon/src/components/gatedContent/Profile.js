@@ -34,7 +34,7 @@ class Profile extends React.Component {
   }
 
   render() {
-    console.log("profile?", this.state);
+    // console.log("profile?", this.state);
     return (
       <div className="profile-wrap">
         <PrivateNav />

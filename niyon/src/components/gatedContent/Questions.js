@@ -11,7 +11,7 @@ class Questions extends React.Component {
       questions: [],
       filter: {}
     };
-    console.log(this)
+    // console.log(this)
   }
 
   componentDidMount() {

@@ -125,7 +125,9 @@ class UpdateUser extends React.Component {
             onChange={this.handleChange}
           />
           <button onClick={this.updateIt}>Update Profile</button>
-          <button>Delete Profile</button>
+          <button onClick={(e) => { if (window.confirm('Are you sure you wish to delete your profile?')) this.deleteUser(e) }}>
+            Delete Profile
+          </button>
         </form>
       </div>
     );
