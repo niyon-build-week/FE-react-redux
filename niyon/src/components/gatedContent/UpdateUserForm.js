@@ -3,8 +3,8 @@ import axios from 'axios';
 import PrivateNav from './PrivateNav';
 
 class UpdateUser extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       user: {}
     };

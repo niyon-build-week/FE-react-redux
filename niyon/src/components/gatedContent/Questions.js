@@ -4,12 +4,12 @@ import PrivateNav from './PrivateNav';
 
 
 class Questions extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       questions: []
     };
-    console.log(this)
+    console.log(this.props)
   }
 
   componentDidMount() {
@@ -19,7 +19,7 @@ class Questions extends React.Component {
     //       }
     // }
     axios
-      .get(`https://niyon.herokuapp.com/api/questions/:id`)
+      .get(`https://niyon.herokuapp.com/api/questions/${this.props.user.id}`)
       .then(res => {
         console.log('mounting q list', res.data);
         this.setState({

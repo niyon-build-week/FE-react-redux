@@ -15,8 +15,9 @@ class NewUser extends React.Component {
   }
 ///needs a post route for adding new users
   createUser = user => {
+    console.log(this.state)
     return axios
-      .post(`https://niyon.herokuapp.com/api/profile/`, user)
+      .post(`https://niyon.herokuapp.com/api/profile/:id`, user)
       .then(res => {
         console.log("creating", res);
         this.setState({

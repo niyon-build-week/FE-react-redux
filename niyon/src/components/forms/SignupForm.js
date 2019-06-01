@@ -36,6 +36,7 @@ class Signup extends React.Component {
             localStorage.setItem("user_id", res.data.id);
             //redirect to new user
             this.props.history.push(`/new_user/:id`);
+            console.log(res.data)
           });
       })
       .catch(err => {

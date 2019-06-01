@@ -13,6 +13,7 @@ class QForm extends React.Component {
                   location: '',
                   date: ''
             }
+            console.log(this.props)
       };
 
       handleChange = e => {
